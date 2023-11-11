@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 2em;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 1em;
+            padding: 1em;
+            width: 200px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+        }
+
+        input[type="text"] {
+            padding: 0.5em;
+            width: 200px;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            margin-left: 0.5em;
+        }
+
+        /* Скрытая модальная форма */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Добро пожаловать в магазин!</h1>
+        <form>
+            <input type="text" placeholder="Поиск...">
+            <button type="submit">Найти</button>
+        </form>
+
+        <!-- Кнопка для открытия модального окна -->
+        <button onclick="openModal()">Открыть модальное окно</button>
+
+        <!-- Модальное окно -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span onclick="closeModal()" style="cursor: pointer; float: right;">&times;</span>
+                <p>Содержимое модального окна...</p>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="product">
+            <h2>Товар 1</h2>
+            <p>Описание товара 1.</p>
+            <p>Цена: $20</p>
+            <button>Добавить в корзину</button>
+        </div>
+
+        <div class="product">
+            <h2>Товар 2</h2>
+            <p>Описание товара 2.</p>
+            <p>Цена: $30</p>
+            <button>Добавить в корзину</button>
+        </div>
+
+        <!-- Добавьте другие товары по аналогии -->
+
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Магазин. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // JavaScript для управления модальным окном
+        function openModal() {
+            document.getElementById('myModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
